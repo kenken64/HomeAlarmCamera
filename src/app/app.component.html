@@ -1,0 +1,18 @@
+<TabView androidTabsPosition="bottom">
+
+    <page-router-outlet
+        *tabItem="{title: 'Home', iconSource: getIconSource('home')}"
+        name="homeTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{title: 'Alerts', iconSource: getIconSource('alerts')}"
+        name="browseTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{title: 'Settings', iconSource: getIconSource('settings')}"
+        name="searchTab">
+    </page-router-outlet>
+
+</TabView>

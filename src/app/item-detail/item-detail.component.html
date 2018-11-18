@@ -1,0 +1,21 @@
+<ActionBar class="action-bar" title="Intruder">
+    <NavigationButton android.systemIcon="ic_menu_back" text="Back" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+    
+    
+<StackLayout class="m-15" sdkExampleTitle sdkToggleNavButton paddingBottom> 
+    <Image id="imageid" src="{{imageUrl}}"
+        stretch="none" class="thumb p-16 gap"></Image>
+    <StackLayout class="hr-light m-10"></StackLayout>
+    <Label class="page-icon fa" text="Email"></Label>
+    <TextField [(ngModel)]="emailTx" hint="Email" autocorrect="false"  
+        class="input input-border"></TextField>
+    <Label class="page-icon fa" text="Subject"></Label>
+    <TextField [(ngModel)]="subjectlTx" int="Subject" autocorrect="false"  
+        class="input input-border"></TextField>
+    
+    <Label class="page-icon fa" text="Message"></Label>
+    <TextField [(ngModel)]="messagetext" int="messagetext" autocorrect="false"  
+        class="input input-border"></TextField>
+    <Button class="btn btn-primary btn-active" id="button" text="Send" (tap)="onSend($event)"></Button>
+</StackLayout>
