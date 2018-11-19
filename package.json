@@ -26,6 +26,8 @@
     "@angular/router": "~7.0.0",
     "nativescript-angular": "~7.0.0",
     "nativescript-email": "^1.5.3",
+    "nativescript-pulltorefresh": "^2.2.0",
+    "nativescript-secure-storage": "^2.3.0",
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.10",
     "rxjs": "~6.3.0",

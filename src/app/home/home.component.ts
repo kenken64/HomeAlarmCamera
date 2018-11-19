@@ -13,7 +13,18 @@ export class HomeComponent implements OnInit {
 
     constructor(private itemService: DataService, private router: RouterExtensions) { }
 
+    refreshList(args) {
+        var pullRefresh = args.object;
+        this.items = [];
+        this.retrieveAllImages();
+        pullRefresh.refreshing = false;
+    }
+
     ngOnInit(): void {
+        this.retrieveAllImages();
+    }
+
+    retrieveAllImages(){
         this.itemService.getAllImages().then((response: HttpResponse)=>{
             
             const str = response.content.toString();
@@ -21,7 +32,7 @@ export class HomeComponent implements OnInit {
             let endUL = str.indexOf('</ul>');
             let value = str.substring(startUL, endUL);
             let tokenValues= value.split('<li><a href="');
-            let newTokenValues = tokenValues.shift();
+            tokenValues.shift();
             for (let x = 0 ; x < tokenValues.length; x++){
                 let yy = tokenValues[x].split('">');
                 this.items.push(yy[0]);

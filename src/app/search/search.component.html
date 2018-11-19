@@ -5,7 +5,7 @@
 
 <StackLayout class="m-15" sdkExampleTitle sdkToggleNavButton>
     <Label class="page-icon fa" text="Image URL"></Label>
-    <TextField #secondTx hint="Enter some text and click the button" autocorrect="false" returnKeyType="done" (returnPress)="submit(secondTx.text)"
+    <TextField [(ngModel)]="imageURL" hint="Enter some text and click the button" autocorrect="false" 
         class="input input-border"></TextField>
     <!-- >> button-tap-event-html -->
     <Button class="btn btn-primary btn-active" id="button" text="Save" (tap)="onTap($event)"></Button>

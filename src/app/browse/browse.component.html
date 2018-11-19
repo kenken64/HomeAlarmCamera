@@ -3,6 +3,16 @@
 </ActionBar>
 
 <GridLayout class="page page-content">
-    <Label class="page-icon fa" text="&#xf1ea;"></Label>
-    <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
+    <PullToRefresh (refresh)="refreshList($event)">
+        <ListView [items]="items" class="list-group">
+                <ng-template let-item="item" let-odd="odd" let-even="even">
+                    <StackLayout orientation="vertical">
+                            <Label class="h3 p-15" [text]="item.subject"></Label>
+                            <Label class="h3 p-15" [text]="item.email"></Label>
+                            <Label class="h3 p-15" [text]="item.sentDate | date:'mediumDate'"></Label>
+                            <Label class="h3 p-15" [text]="item.imageUrl"></Label>
+                    </StackLayout>
+                </ng-template>
+        </ListView>
+    </PullToRefresh>
 </GridLayout>
