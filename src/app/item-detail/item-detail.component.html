@@ -2,8 +2,8 @@
     <NavigationButton android.systemIcon="ic_menu_back" text="Back" (tap)="goBack()"></NavigationButton>
 </ActionBar>
     
-    
-<StackLayout class="m-15" sdkExampleTitle sdkToggleNavButton paddingBottom> 
+<ScrollView sdkExampleTitle sdkToggleNavButton>
+<StackLayout class="m-15"> 
     <Image id="imageid" src="{{imageUrl}}"
         stretch="none" class="thumb p-28 gap"></Image>
     <StackLayout class="hr-light m-10"></StackLayout>
@@ -19,3 +19,4 @@
         class="input input-border"></TextField>
     <Button class="btn btn-primary btn-active" id="button" text="Send" (tap)="onSend($event)"></Button>
 </StackLayout>
+</ScrollView>    

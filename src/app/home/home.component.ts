@@ -28,10 +28,14 @@ export class HomeComponent implements OnInit {
         this.itemService.getAllImages().then((response: HttpResponse)=>{
             
             const str = response.content.toString();
-            let startUL = str.indexOf('<ul>');
-            let endUL = str.indexOf('</ul>');
+            console.log(response.content);
+            console.log(str);
+            let startUL = str.indexOf('<pre>');
+            let endUL = str.indexOf('</pre>');
             let value = str.substring(startUL, endUL);
-            let tokenValues= value.split('<li><a href="');
+            let tokenValues= value.split('<a href="');
+            console.log(tokenValues);
+            tokenValues.shift();
             tokenValues.shift();
             for (let x = 0 ; x < tokenValues.length; x++){
                 let yy = tokenValues[x].split('">');
